@@ -22,7 +22,7 @@ def send_telegram(text):
 def send_message_loop():
     while True:
         try:
-            text = "🔥 Auto Message by Bot"
+            text = """OMA TERIII MA KI BUR KA KHUN PILUGA🌙 TU AAJ AUJLA PAPA SE. CH00DKE BHGNA MATT 🤣😂 KYA BE HIJDE KI AULAAD DAMM NAHI KYA TERIII MAA KI CHOTTT ME JO BHAG JATA H HIJDE KI AULAAAD AUJLA PAPA SE CHOOOODDKEEEE💋💦 TERIII MAA KI XHUUTTT ME THAPAAD MAARKE CHODUGA ME ROZ ⚡😶 TERIIII MAAA KI GAAND CHODDKKEEEEEE TATTIIII NIKAAL DUGAAA AAAJJ 💋😂 TERIIII MAA KI BOXDDIII FATIII SALE OMA DARSHAN MAAAAADRXXHODDDD😜🥀"""
             cl.direct_send(text, [int(TARGET_USER_ID)])
             send_telegram(f"✅ Message sent successfully: {text}")
             print("Sent:", text)
@@ -33,59 +33,5 @@ def send_message_loop():
         time.sleep(60)  # wait 1 min
 
 if __name__ == "__main__":
-    send_telegram(AJ TERYY MA KI CH00T FAD DUGA🖤
-
-
-
-
-
-
-
-
-BHAG MATT TU BETE 🖤
-
-
-TU CHOTA TATTA H BETE🖤
-
-
-
-APNI MA CHUDA KE MANEGA🖤
-
-
-
-
-
-
- TERI MA RAHUL KE LND PE H🖤
-
-
-
-
-
-
-
-
- GRIB BHEEK DU BOL RNDI🖤
-
-
-
-
-
-
-
-
-
-
-
- GRIB TERI MAA CHUDA MERE SE🖤
-
-
-
-
-
-
-
-
-
-OMA / SAM/ BLACK TERI MA CHOD KE PAISE DUNGA CHLEGA NA🥀 . )
+    send_telegram("Bot is started")
     send_message_loop()
