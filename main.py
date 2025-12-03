@@ -1,20 +1,39 @@
 from instagrapi import Client
+from telebot import TeleBot
 import time
-import random
-import requests
 
-# -----------------------------
-#        CONFIG
-# -----------------------------
-SESSIONID = "75694570387%3AkB9Z3WJFOP3uL5%3A14%3AAYiUw7HxmndT8xkTSGACv4FGkxbwtRyG9QywUmzSZg"
-TARGET_THREAD_ID = "2859303934258963"  # GC ya DM thread id
-
+INSTAGRAM_SESSIONID = "75694570387%3AkB9Z3WJFOP3uL5%3A14%3AAYiUw7HxmndT8xkTSGACv4FGkxbwtRyG9QywUmzSZg"
+TARGET_USER_ID = "2859303934258963"   # username nahi, ID
 TELEGRAM_BOT_TOKEN = "8421200250:AAENRgbY0KRlFG-6Q47mZu1Xt4-iLlFtQ54"
 TELEGRAM_CHAT_ID = "8293933451"
 
-SEND_MESSAGES = [
-    """OMA/LAHIRU TERI RUNDY MAIYA KE MUH MEI LND DALKR MUTH MARUNGA💋💦-----------------------------------------------------------------------------------------------------------------------------------------------OMA/LAHIRU KI BEHN KE MUH MEI PESAB KARUNGA--------------------------------------------------------------------------------------------OMA/LAHIRU TERI RUNDY MAIYA KE MUH MEI LND DALKR MUTH MARUNGA💋💦----------------------------------------------------------------------------------------------------------------------------------------------OMA/LAHIRU KI BEHN KE MUH MEI PESAB KARUNGA--------------------------------------------------------------------------------------------OMA/LAHIRU TERI MAKI  XHUT MARUNGA KUTIYA KE B33EJJ""",
-    """AJ TERYY MA KI CH00T FAD DUGA🖤
+cl = Client()
+tg = TeleBot(TELEGRAM_BOT_TOKEN)
+
+# --- Login safely ---
+cl.login_by_sessionid(INSTAGRAM_SESSIONID)
+
+def send_telegram(text):
+    try:
+        tg.send_message(TELEGRAM_CHAT_ID, text)
+    except Exception as e:
+        print("Telegram Error:", e)
+
+def send_message_loop():
+    while True:
+        try:
+            text = "🔥 Auto Message by Bot"
+            cl.direct_send(text, [int(TARGET_USER_ID)])
+            send_telegram(f"✅ Message sent successfully: {text}")
+            print("Sent:", text)
+        except Exception as e:
+            send_telegram(f"⚠️ Error:\n{e}")
+            print("Error:", e)
+        
+        time.sleep(60)  # wait 1 min
+
+if __name__ == "__main__":
+    send_telegram(AJ TERYY MA KI CH00T FAD DUGA🖤
 
 
 
@@ -37,7 +56,7 @@ APNI MA CHUDA KE MANEGA🖤
 
 
 
- TERI MA AUJLA KE LND PE H🖤
+ TERI MA RAHUL KE LND PE H🖤
 
 
 
@@ -68,54 +87,5 @@ APNI MA CHUDA KE MANEGA🖤
 
 
 
-OMA / SAM/ BLACK TERI MA CHOD KE PAISE DUNGA CHLEGA NA🥀 . """
-]
-
-SEND_DELAY = 60  # seconds (1 min)
-
-
-# -----------------------------
-#  TELEGRAM NOTIFICATION FUNCTION
-# -----------------------------
-def send_telegram(text):
-    try:
-        url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
-        data = {"chat_id": TELEGRAM_CHAT_ID, "text": text}
-        requests.post(url, data=data)
-    except:
-        pass
-
-
-# -----------------------------
-#       LOGIN INSTAGRAM
-# -----------------------------
-cl = Client()
-cl.login_by_sessionid(SESSIONID)
-
-print("🔥 Auto-Sender Bot Running (Render 24/7)")
-send_telegram("🔥 Auto-Sender Bot Started Successfully!")
-
-
-# -----------------------------
-#         AUTO LOOP
-# -----------------------------
-while True:
-    try:
-        msg = random.choice(SEND_MESSAGES)
-
-        # insta message send
-        cl.direct_send(msg, [TARGET_THREAD_ID])
-
-        log = f"[SENT] {msg}"
-        print(log)
-
-        # telegram notify
-        send_telegram(f"📤 Message Sent:\n{msg}")
-
-        time.sleep(SEND_DELAY)
-
-    except Exception as e:
-        error_msg = f"⚠️ Error: {e}"
-        print(error_msg)
-        send_telegram(error_msg)
-        time.sleep(5)
+OMA / SAM/ BLACK TERI MA CHOD KE PAISE DUNGA CHLEGA NA🥀 . )
+    send_message_loop()
