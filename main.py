@@ -6,7 +6,7 @@ import requests
 # -----------------------------
 #        CONFIG
 # -----------------------------
-SESSIONID = "75694570387%3AkB9Z3WJFOP3uL5%3A14%3AAYhN7TQGpinfi2zLwuW2iyzQ06Dp6kI2oM_s7TdedQ"
+SESSIONID = "75694570387%3AkB9Z3WJFOP3uL5%3A14%3AAYiUw7HxmndT8xkTSGACv4FGkxbwtRyG9QywUmzSZg"
 TARGET_THREAD_ID = "2859303934258963"  # GC ya DM thread id
 
 TELEGRAM_BOT_TOKEN = "8421200250:AAENRgbY0KRlFG-6Q47mZu1Xt4-iLlFtQ54"
